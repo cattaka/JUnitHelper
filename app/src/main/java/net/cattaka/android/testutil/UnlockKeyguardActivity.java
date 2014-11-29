@@ -32,12 +32,12 @@ public class UnlockKeyguardActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        sHandler.post(new Runnable() {
+        sHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 checkUnlocked();
             }
-        });
+        }, 100);
     }
 
     private void checkUnlocked() {
