@@ -1,4 +1,4 @@
-package net.cattaka.android.testutil;
+package net.cattaka.android.junithelper;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

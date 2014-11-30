@@ -1,4 +1,4 @@
-package net.cattaka.android.testutil;
+package net.cattaka.android.junithelper;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
@@ -9,8 +9,8 @@ import android.content.Intent;
  * Created by cattaka on 14/11/30.
  */
 public class ExportedReceiver extends BroadcastReceiver {
-    public static final String ACTION_LOCK = "net.cattaka.android.testutil.ExportedReceiver.lock";
-    public static final String ACTION_UNLOCK = "net.cattaka.android.testutil.ExportedReceiver.unlock";
+    public static final String ACTION_LOCK = "net.cattaka.android.junithelper.ExportedReceiver.lock";
+    public static final String ACTION_UNLOCK = "net.cattaka.android.junithelper.ExportedReceiver.unlock";
 
     @Override
     public void onReceive(Context context, Intent intent) {
