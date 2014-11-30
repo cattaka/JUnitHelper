@@ -17,8 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".UnlockKeyguardActivity"
-            android:exported="true"
             />
+        <receiver android:name=".ExportedReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="net.cattaka.android.testutil.ExportedReceiver.lock"/>
+                <action android:name="net.cattaka.android.testutil.ExportedReceiver.unlock"/>
+            </intent-filter>
+        </receiver>
         <receiver android:name=".MyAdminReceiver"
                   android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data android:name="android.app.device_admin"

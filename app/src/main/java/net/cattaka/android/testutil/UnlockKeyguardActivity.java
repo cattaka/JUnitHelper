@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -42,7 +43,8 @@ public class UnlockKeyguardActivity extends Activity {
 
     private void checkUnlocked() {
         KeyguardManager km = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
-        if (!km.inKeyguardRestrictedInputMode()) {
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        if (!km.inKeyguardRestrictedInputMode() && pm.isScreenOn()) {
             finish();
         } else {
             sHandler.postDelayed(new Runnable() {
